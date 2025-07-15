@@ -115,9 +115,23 @@ const Agent = ({
   }, [messages, callStatus, feedbackId, interviewId, router, type, userId]);
 
   const handleCall = async () => {
+    console.log("handleCall invoked") 
     setCallStatus(CallStatus.CONNECTING);
 
     if (type === "generate") {
+      console.log("vapi object:", vapi) 
+      console.log("vapi.start params:", {
+        assistant: undefined,
+        assistantOverrides: undefined,
+        squad: undefined,
+        workflowId: process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID,
+        options: {
+          variableValues: {
+            username: userName,
+            userid: userId,
+          },
+        },
+      });
       await vapi.start(
         undefined, // assistant
         undefined, // assistantOverrides
