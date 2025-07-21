@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interview-Mate
+
+**Interview-Mate** is an AI-powered platform for practicing job interviews and receiving instant, structured feedback. It simulates real interview scenarios using voice and text, leveraging advanced AI models to generate questions and analyze candidate responses.
+
+## Features
+
+- 🤖 **AI-Generated Interview Questions:** Practice with questions tailored to your chosen role, experience level, and tech stack.
+- 🗣️ **Voice & Text Interview Simulation:** Interact with an AI interviewer in real-time, mimicking real interview conditions.
+- ⭐ **Instant Feedback:** Receive detailed, category-based feedback on your performance, including communication, technical knowledge, problem-solving, and more.
+- 🔒 **User Authentication:** Secure sign-up and sign-in with Firebase.
+- 💻 **Modern UI:** Responsive, accessible design using Next.js, Tailwind CSS, and Radix UI components.
+
+## Tech Stack
+
+- **Frontend:** Next.js 15, React 19, Tailwind CSS
+- **Backend/Serverless:** Next.js API routes
+- **AI/ML:** Google Gemini, OpenAI GPT-4 (via Vapi and ai-sdk)
+- **Authentication & Database:** Firebase (client and admin SDKs)
+- **Voice/Transcription:** Vapi, Deepgram, 11labs
+- **Form Handling:** React Hook Form, Zod validation
+- **UI Components:** Radix UI, Lucide Icons, shadcn/ui
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/interview-mate.git
+cd interview-mate
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Set up environment variables
+
+Create a `.env.local` file in the root directory and add your Firebase, Vapi, and AI provider credentials:
+
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
+NEXT_PUBLIC_FIREBASE_APP_ID=...
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=...
+FIREBASE_PROJECT_ID=...
+FIREBASE_CLIENT_EMAIL=...
+FIREBASE_PRIVATE_KEY=...
+NEXT_PUBLIC_VAPI_WEB_TOKEN=...
+NEXT_PUBLIC_VAPI_WORKFLOW_ID=...
+# Add any other required API keys
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` – Next.js app directory (routes, layouts, API)
+- `components/` – Reusable React components
+- `firebase/` – Firebase client and admin setup
+- `lib/` – Utility functions and server actions
+- `constants/` – Static mappings and configuration
+- `public/` – Static assets (images, icons)
+- `types/` – TypeScript type definitions
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` – Start the development server
+- `npm run build` – Build for production
+- `npm start` – Start the production server
+- `npm run lint` – Lint the codebase
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pull requests and issues are welcome! Please open an issue to discuss your ideas or report bugs.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE) (add a LICENSE file if you haven’t already)
